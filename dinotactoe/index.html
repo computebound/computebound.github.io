@@ -11,155 +11,192 @@
             background: linear-gradient(135deg, #2d5a3d 0%, #1a3a25 100%);
             min-height: 100vh;
             color: white;
-            padding: 40px 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            min-height: 100vh;
         }
-        .hero {
-            margin-bottom: 30px;
+        .content {
+            flex: 1;
+            max-width: 480px;
         }
-        .emoji {
-            font-size: 60px;
-            margin-bottom: 10px;
+        .dinos {
+            font-size: 50px;
+            margin-bottom: 15px;
         }
         h1 {
-            font-size: 2.8em;
+            font-size: 3.2em;
             font-weight: 800;
             background: linear-gradient(90deg, #ffa726, #66bb6a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
+            background-clip: text;
+            margin-bottom: 12px;
+            line-height: 1.1;
         }
         .tagline {
-            font-size: 1.3em;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 5px;
+            font-size: 1.5em;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 8px;
+            font-weight: 500;
         }
         .platform {
-            font-size: 0.95em;
+            font-size: 1em;
             color: rgba(255,255,255,0.6);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
         .built-by {
             display: inline-block;
-            background: rgba(255,255,255,0.15);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: rgba(255,255,255,0.85);
-        }
-        .main-content {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-            margin-top: 30px;
-        }
-        .screenshot {
-            flex: 0 0 280px;
-        }
-        .screenshot img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-        .features-side {
-            flex: 1;
-            text-align: left;
+            background: rgba(255,255,255,0.12);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
         }
         .usp {
-            background: rgba(255,152,0,0.2);
-            border-left: 3px solid #ffa726;
-            padding: 15px 20px;
+            background: rgba(255,152,0,0.15);
+            border-left: 4px solid #ffa726;
+            padding: 18px 22px;
             border-radius: 0 12px 12px 0;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-            line-height: 1.5;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
         }
         .features {
             list-style: none;
+            margin-bottom: 30px;
         }
         .features li {
-            padding: 8px 0;
-            font-size: 0.95em;
+            padding: 10px 0;
+            font-size: 1.05em;
             color: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         .features li::before {
-            content: "✓ ";
+            content: "✓";
             color: #66bb6a;
             font-weight: bold;
+            font-size: 1.2em;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #007aff, #0056b3);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 122, 255, 0.5);
+        }
+        .phone-container {
+            flex: 0 0 300px;
+        }
+        .phone-frame {
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+        }
+        .phone-frame img {
+            width: 100%;
+            border-radius: 30px;
+            display: block;
         }
         footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            text-align: center;
             font-size: 0.85em;
             color: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.2);
         }
         footer a {
             color: rgba(255,255,255,0.7);
-        }
-        .testflight-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background: #007aff;
-            color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: background 0.2s;
         }
-        .testflight-btn:hover {
-            background: #0056b3;
+        footer a:hover {
+            color: white;
         }
-        @media (max-width: 700px) {
-            .main-content {
+        @media (max-width: 800px) {
+            .container {
                 flex-direction: column;
-                align-items: center;
+                padding: 40px 20px 80px;
+                gap: 40px;
             }
-            .screenshot { flex: none; width: 200px; }
-            .features-side { text-align: center; }
-            .usp { text-align: left; }
+            .content {
+                text-align: center;
+            }
+            .usp {
+                text-align: left;
+            }
+            .features {
+                text-align: left;
+                display: inline-block;
+            }
+            .phone-container {
+                flex: none;
+                width: 260px;
+                order: -1;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hero">
-            <div class="emoji">🦖🦕</div>
+        <div class="content">
+            <div class="dinos">🦖🦕</div>
             <h1>Dino Tac Toe</h1>
             <p class="tagline">Builds confidence, not frustration.</p>
             <p class="platform">For iPhone & iPad</p>
             <span class="built-by">Built by parents, for kids ages 4-9</span>
+
+            <div class="usp">
+                Bronty adapts to your child — challenging enough to be fun, never so hard they feel discouraged. Wins make it harder, struggles make it easier.
+            </div>
+
+            <ul class="features">
+                <li>Smart difficulty that grows with your child</li>
+                <li>2-player mode for family fun</li>
+                <li>No ads, no in-app purchases</li>
+                <li>No data collection — 100% private</li>
+            </ul>
+
+            <a href="mailto:games@computebound.ai?subject=TestFlight Access Request&body=I'd like to try Dino Tac Toe!" class="cta-button">Get Early Access via TestFlight</a>
         </div>
 
-        <div class="main-content">
-            <div class="screenshot">
-                <img src="iphone_6.7_home.png" alt="Dino Tac Toe">
-            </div>
-            <div class="features-side">
-                <div class="usp">
-                    Bronty adapts to your child — challenging enough to be fun, never so hard they feel discouraged. Wins make it harder, struggles make it easier.
-                </div>
-                <ul class="features">
-                    <li>Smart difficulty that grows with your child</li>
-                    <li>2-player mode for family fun</li>
-                    <li>No ads, no in-app purchases</li>
-                    <li>No data collection — 100% private</li>
-                </ul>
-                <a href="mailto:games@computebound.ai?subject=TestFlight Access Request&body=I'd like to try Dino Tac Toe!" class="testflight-btn">Get Early Access via TestFlight</a>
+        <div class="phone-container">
+            <div class="phone-frame">
+                <img src="iphone_cropped.png" alt="Dino Tac Toe Screenshot">
             </div>
         </div>
-
-        <footer>
-            <a href="mailto:games@computebound.ai">games@computebound.ai</a> ·
-            <a href="privacy.html">Privacy Policy</a><br>
-            © 2025 Computebound
-        </footer>
     </div>
+
+    <footer>
+        <a href="mailto:games@computebound.ai">games@computebound.ai</a> ·
+        <a href="privacy.html">Privacy Policy</a> ·
+        © 2025 Computebound
+    </footer>
 </body>
 </html>
