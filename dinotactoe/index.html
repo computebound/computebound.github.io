@@ -13,21 +13,17 @@
             color: white;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
+            padding: 50px 20px 30px;
         }
-        .content {
-            flex: 1;
-            max-width: 480px;
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
         }
         .dinos {
             font-size: 50px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         h1 {
             font-size: 3.2em;
@@ -36,19 +32,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 12px;
-            line-height: 1.1;
+            margin-bottom: 10px;
         }
         .tagline {
             font-size: 1.5em;
             color: rgba(255,255,255,0.95);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
         }
         .platform {
             font-size: 1em;
             color: rgba(255,255,255,0.6);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .built-by {
             display: inline-block;
@@ -57,7 +52,14 @@
             border-radius: 25px;
             font-size: 0.95em;
             color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
+        }
+        .main-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .left-section {
+            flex: 1;
         }
         .usp {
             background: rgba(255,152,0,0.15);
@@ -67,35 +69,33 @@
             margin-bottom: 25px;
             font-size: 1.05em;
             line-height: 1.6;
-            color: rgba(255,255,255,0.95);
         }
         .features {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .features li {
-            padding: 10px 0;
-            font-size: 1.05em;
+            padding: 8px 0;
+            font-size: 1em;
             color: rgba(255,255,255,0.9);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         .features li::before {
             content: "✓";
             color: #66bb6a;
             font-weight: bold;
-            font-size: 1.2em;
         }
         .cta-button {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 14px 28px;
             background: linear-gradient(135deg, #007aff, #0056b3);
             color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: 1.05em;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
         }
@@ -103,24 +103,36 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(0, 122, 255, 0.5);
         }
-        .phone-container {
-            flex: 0 0 300px;
+        .phones {
+            display: flex;
+            gap: 20px;
+            flex: 0 0 auto;
         }
         .phone-frame {
             background: #1a1a1a;
-            border-radius: 40px;
-            padding: 12px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+            border-radius: 30px;
+            padding: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
         .phone-frame img {
-            width: 100%;
-            height: 520px;
+            width: 180px;
+            height: 390px;
             object-fit: cover;
             object-position: top;
-            border-radius: 30px;
+            border-radius: 24px;
             display: block;
         }
+        .phone-frame.admin img {
+            object-position: center top;
+        }
+        .phone-label {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: rgba(255,255,255,0.6);
+        }
         footer {
+            margin-top: 40px;
             padding: 20px;
             text-align: center;
             font-size: 0.85em;
@@ -134,66 +146,74 @@
             color: white;
         }
         @media (max-width: 800px) {
-            .container {
+            .main-content {
                 flex-direction: column;
-                padding: 40px 20px;
-                gap: 40px;
+                align-items: center;
             }
-            .content {
+            .phones {
+                order: -1;
+                margin-bottom: 20px;
+            }
+            .phone-frame img {
+                width: 140px;
+                height: 300px;
+            }
+            .left-section {
                 text-align: center;
             }
-            .usp {
-                text-align: left;
-            }
-            .features {
-                text-align: left;
-                display: inline-block;
-            }
-            .phone-container {
-                flex: none;
-                width: 260px;
-                order: -1;
-            }
-            h1 {
-                font-size: 2.5em;
-            }
+            .usp { text-align: left; }
+            .features { display: inline-block; text-align: left; }
+            h1 { font-size: 2.5em; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="content">
+        <div class="hero">
             <div class="dinos">🦖🦕</div>
             <h1>Dino Tac Toe</h1>
             <p class="tagline">Builds confidence, not frustration.</p>
             <p class="platform">For iPhone & iPad</p>
             <span class="built-by">Built by parents, for kids ages 4-9</span>
-
-            <div class="usp">
-                Bronty adapts to your child — challenging enough to be fun, never so hard they feel discouraged. Wins make it harder, struggles make it easier.
-            </div>
-
-            <ul class="features">
-                <li>Smart difficulty that grows with your child</li>
-                <li>2-player mode for family fun</li>
-                <li>No ads, no in-app purchases</li>
-                <li>No data collection — 100% private</li>
-            </ul>
-
-            <a href="mailto:games@computebound.ai?subject=TestFlight Access Request&body=I'd like to try Dino Tac Toe!" class="cta-button">Get Early Access via TestFlight</a>
         </div>
 
-        <div class="phone-container">
-            <div class="phone-frame">
-                <img src="iphone_6.7_home.png" alt="Dino Tac Toe Screenshot">
+        <div class="main-content">
+            <div class="left-section">
+                <div class="usp">
+                    Bronty adapts to your child — challenging enough to be fun, never so hard they feel discouraged. Wins make it harder, struggles make it easier.
+                </div>
+
+                <ul class="features">
+                    <li>Smart difficulty that grows with your child</li>
+                    <li>Parent controls to fine-tune the challenge</li>
+                    <li>2-player mode for family fun</li>
+                    <li>No ads, no in-app purchases, 100% private</li>
+                </ul>
+
+                <a href="mailto:games@computebound.ai?subject=TestFlight Access Request&body=I'd like to try Dino Tac Toe!" class="cta-button">Get Early Access via TestFlight</a>
+            </div>
+
+            <div class="phones">
+                <div>
+                    <div class="phone-frame">
+                        <img src="iphone_6.7_home.png" alt="Dino Tac Toe Game">
+                    </div>
+                    <p class="phone-label">Play</p>
+                </div>
+                <div>
+                    <div class="phone-frame admin">
+                        <img src="admin_settings.png" alt="Parent Controls">
+                    </div>
+                    <p class="phone-label">Parent Controls</p>
+                </div>
             </div>
         </div>
+
+        <footer>
+            <a href="mailto:games@computebound.ai">games@computebound.ai</a> ·
+            <a href="privacy.html">Privacy Policy</a> ·
+            © 2025 Computebound
+        </footer>
     </div>
-
-    <footer>
-        <a href="mailto:games@computebound.ai">games@computebound.ai</a> ·
-        <a href="privacy.html">Privacy Policy</a> ·
-        © 2025 Computebound
-    </footer>
 </body>
 </html>
