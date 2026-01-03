@@ -101,6 +101,21 @@
         footer a {
             color: rgba(255,255,255,0.7);
         }
+        .testflight-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #007aff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
+        .testflight-btn:hover {
+            background: #0056b3;
+        }
         @media (max-width: 700px) {
             .main-content {
                 flex-direction: column;
@@ -136,6 +151,7 @@
                     <li>No ads, no in-app purchases</li>
                     <li>No data collection — 100% private</li>
                 </ul>
+                <a href="mailto:games@computebound.ai?subject=TestFlight Access Request&body=I'd like to try Dino Tac Toe!" class="testflight-btn">Get Early Access via TestFlight</a>
             </div>
         </div>
 
